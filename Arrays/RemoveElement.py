@@ -15,8 +15,13 @@
 
 class Solution:
     def removeElement(self, nums: list[int], val: int) -> int:
-            #  todo: create function.
-            pass
+        for i in range(len(nums)):
+            if i < len(nums) : 
+                if nums[i] == val:
+                    while val in nums:
+                        nums.remove(val)
+                
+        print(len(nums))
 
 
 test = Solution()
