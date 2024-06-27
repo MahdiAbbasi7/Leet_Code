@@ -42,4 +42,4 @@ g.add_Edge(2, 3)
 g.add_Edge(3, 3)
 
 print("Following is Breadth First Traversal")
-g.BFS(2)
+g.BFS(2) # 2 0 3 1
