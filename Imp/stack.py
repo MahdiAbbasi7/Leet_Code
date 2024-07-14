@@ -6,14 +6,14 @@ def display():
 def push():
     input_ = int(input('Enter the number for pushing:'))
     stack.append(input_)
-    print('Successfully pushed')
+    print(f'{input_} Successfully pushed')
 
 def pop():
     temp=stack[-1]
     stack.pop()
     print(temp, "is deleted.")
 
-while(1):
+while True:
     print(" menu ")
     print("1-push")
     print("2-pop")
