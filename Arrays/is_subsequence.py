@@ -15,17 +15,17 @@ class Solution:
     '''Solution'''
     def is_subsequence(self, s: str, t: str) -> bool:
         '''sub'''
-        l_s = list(s)
-        l_t = list(t)
 
-        for i in enumerate(l_s):
-            for j in enumerate(l_t):
-                if l_s[i] == l_t[j]:
-                    i+=1
-                j+=1
-            return i == len(s)
+        t_index = 0
+        for char in s:
+            while t_index < len(t) and t[t_index] != char:
+                t_index += 1
+            if t_index == len(t):
+                return False
+            t_index += 1
+        return True
 
 
 
 obj = Solution()
-print(obj.is_subsequence(s = 'abc', t = "ahbgdc"))
+print(obj.is_subsequence(s = 'ahc', t = "ahbgdc"))
