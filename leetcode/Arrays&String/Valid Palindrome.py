@@ -30,7 +30,6 @@ class Solution:
         for letter in s:
             if letter in 'abcdefghijklmnopqrstuvwxyz' or letter in '0123456789':
                 n_s.append(letter)
-        
         campare_s = ''.join(n_s)
 
         n_s = n_s[::-1]
