@@ -13,7 +13,8 @@ class Solution:
                 i2 -= 1
             elif i2 > -1 and nums1[i1] > nums2[i2]:
                 nums1[j], nums1[i1] = nums1[i1], nums1[j]
-                if i1: i1 -= 1            
+                if i1:
+                    i1 -= 1
             j -= 1
 
         if i2 > -1:
