@@ -46,3 +46,29 @@ root.left.right = TreeNode(5)
 
 result = bfs(root)
 print(result)
+
+
+class TreeNode2:
+    def __init__(self, val=0):
+        self.val = val
+        self.left = None
+        self.right = None
+
+
+def inorder_traversal(root):
+    result = []
+
+    def traverse(node):
+        if node:
+            traverse(node.left)
+            result.append(node.val)
+            traverse(node.right)
+
+    traverse(root)
+    return result
+
+
+root = TreeNode2(1)
+root.left = TreeNode2(2)
+root.right = TreeNode2(3)
+print(inorder_traversal(root))

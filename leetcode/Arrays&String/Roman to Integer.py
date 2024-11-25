@@ -1,4 +1,4 @@
-'''
+"""
 Symbol       Value
 I             1
 IV            4
@@ -28,28 +28,36 @@ Example 3:
 Input: s = "MCMXCIV"
 Output: 1994
 Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
-'''
+"""
+
 
 class Solution:
     def romanToInt(self, s: str) -> int:
-        ls = list(s) #"MCMXCIV"
-        res = 0
-        alphba = {
-            'I'  : 1, 
-            'V'  : 5, 
-            'X'  : 10,
-            'L'  : 50, 
-            'C'  : 100,
-            'D'  : 500,
-            'M'  : 1000 }
-        
-        for i in range(len(ls)-1):
-            if alphba[ls[i]] < alphba[ls[i+1]]:
-                res -= alphba[ls[i]]
+        romanToIntDict = {
+            "I": 1,
+            "V": 5,
+            "X": 10,
+            "L": 50,
+            "C": 100,
+            "D": 500,
+            "M": 1000,
+            "IV": 4,
+            "IX": 9,
+            "XL": 40,
+            "XC": 90,
+            "CD": 400,
+            "CM": 900,
+        }
+        ans = 0
+        i = 0
+        while i < len(s):
+            if s[i : i + 2] in romanToIntDict:
+                ans += romanToIntDict[s[i : i + 2]]
+                i += 2
             else:
-                res += alphba[ls[i]]
-
-        return res + alphba[[ls[-1]]]
+                ans += romanToIntDict[s[i]]
+                i += 1
+        return ans
 
 
 obj = Solution()

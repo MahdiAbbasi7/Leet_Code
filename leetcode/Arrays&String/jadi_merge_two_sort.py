@@ -7,7 +7,7 @@ class Solution:
         n2p = n - 1
         wp = m + n - 1
 
-        while wp >= 0:
+        while wp > 0:
             if n1p ==0:
                 ...
             if nums2[n2p] > nums1[n1p]:
@@ -21,4 +21,4 @@ class Solution:
 
     
 test = Solution()
-test.merge([1,2,3,0,0,0],3,[2,5,6],3)
+print(test.merge([1,2,4,0,0,0],3,[3,5,6],3))
